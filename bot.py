@@ -44,6 +44,29 @@ async def reaction(interaction: Interaction, role:nextcord.Role, channel: nextco
         if payload.message_id == msg.id:
             member = payload.member
             await member.add_roles(role)
+            
+            
+#### nextcord buttons
+class ButtonName(nextcord.ui.View):
+    def __init__(self):
+        super().__init__(timeout = None)
+        self.value = None
+    @nextcord.ui.button(label="Button Label", style=nextcord.ButtonStyle.grey)### Please Fill Out "Button Label" And Put Any color You Want in style
+    async def dfdfdfd(self, button: nextcord.ui.Button ,interaction: Interaction):
+        await interaction.response.send_message("ujrjrjfidijgdjgjgijdgijdij")
+        self.value=True
+@bot.slash_command(name="jamal")
+async def jamal(interaction: Interaction):
+    view = ButtonName()
+    await interaction.response.send_message("What's Up?", view=view)
+    if view.value == None:
+        pass
+    ### do whatever you want i usually pass
+    else:
+        pass
+    ### do whatever you want i usually pass
+        
+
 bot.run(token)
         
     
